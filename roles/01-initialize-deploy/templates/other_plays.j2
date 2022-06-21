@@ -1,0 +1,23 @@
+---
+
+  - name: Server Installation 
+    gather_facts: false
+    hosts: localhost
+    vars_files: artefacts/details.yaml
+    roles:
+       - roles/06-install-server
+
+  - name: Templating Build Files 
+    gather_facts: false
+    hosts: servers
+    vars_files: artefacts/details.yaml
+    roles:       
+       - roles/07-configure-server
+
+  - name: Server Installation 
+    gather_facts: false
+    hosts: localhost
+    vars_files: artefacts/details.yaml
+    roles:
+       - roles/08-cleanup-install
+  

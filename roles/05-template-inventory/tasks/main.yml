@@ -1,0 +1,6 @@
+---  
+    -  name: Initialize Inventory File
+       template:
+           src: "inventory.j2"
+           dest: "inventory"
+       with_dict: "{{ ansible }}"
